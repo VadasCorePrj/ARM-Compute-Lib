@@ -111,8 +111,8 @@ public:
             else /* case M N K [alpha = 1.0f] [beta = 0.0f] */
             {
                 size_t M = strtol(argv[1], nullptr, 10);
-                size_t N = strtol(argv[2], nullptr, 10);
-                size_t K = strtol(argv[3], nullptr, 10);
+                size_t K = strtol(argv[2], nullptr, 10);
+                size_t N = strtol(argv[3], nullptr, 10);
 
                 src0.allocator()->init(TensorInfo(TensorShape(K, M), 1, DataType::F32));
                 src1.allocator()->init(TensorInfo(TensorShape(N, K), 1, DataType::F32));
@@ -194,7 +194,7 @@ private:
  *
  * @param[in] argc Number of arguments
  * @param[in] argv Arguments ( Matrix A's row, Matrix B's col, Matrix B's row, [optional] alpha, [optional] beta )
- * ex) (2x2) x (2x1) ==> $./neon_sgemm 2 1 2
+ * ex) (2x2) x (2x1) ==> $nice -n -2 ./neon_sgemm 2 2 1
  */
 int main(int argc, char **argv)
 {
